@@ -28,7 +28,7 @@ header {
     height: inherit;
 }
 .main {
-    background: url(../img/background.png) no-repeat center 60%/cover;
+    background: url(../img/background-1.png) no-repeat center 60%/cover;
 }
 .menu, li{
     display: flex;
@@ -52,7 +52,7 @@ header {
 .block__wrapper{
     display: flex;
     justify-content: space-between;
-    font-size: 48px;
+    font-size: 36px;
 }
 .block {
     overflow: hidden;
@@ -68,31 +68,54 @@ header {
     background: rgba(0,0,0,.1);
     padding: 15px;
 }
-.block:hover{
-    color: rgba(255, 255, 255, 1);
+.logo__wrapper {
+    width: 1024px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.ip__info {
-    width: 601px;
-    }
-.version__info{
-    width: 407px;
+.content__logo{
+    width: 100%;
+    height: 100%;
+    background: url(../img/logo.png) no-repeat center center/ 75%;
+    opacity: .8;
 }
 .tgbot__info, .server__info {
     width: 781px;
-}
-.tgbot__info {
     align-items: start;
     flex-direction: column;
     justify-content: start;
+    padding: 0px;
 }
-.tgbot__info span {
-    color: white;
+.title{
+    width: inherit;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, .9);
+    font-size: 28px;
+}
+.server__info .ip {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, .9);
+    transition: .3s;
+    cursor: pointer;
+}
+.server__info .ip:hover{
+    color: var(--text-color);
+}
+.tgbot__info .info {
+    padding: 10px 10px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, .9);
 }
 .tgbot__info p{
     font-size: 24px;
     color: rgba(255, 255, 255, .7);
 }
-
 .tgbot__link, .play__button{
     width: 228px;
 }
@@ -101,48 +124,48 @@ header {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    
 }
 .tgbot__link .bot__image{
-    width: 75%;
-    height: 75%;
-    background: url(/img/bot.png) no-repeat center top/cover;
+    width: inherit;
+    height: inherit;
+    background: url(/img/bot.png) no-repeat center center/60%;
 }
 .tgbot__link{
-    background: linear-gradient(180deg, #71b8eb98, #0181dd9c);
-}
-.tgbot__link:hover{
-    animation: tglink 1s ease-in-out;
+    background: linear-gradient(180deg, #71b8eb38, #0181dd34);
+    animation: botAnim 2s ease-in-out infinite;
 }
 .play__button {
-    background: linear-gradient(180deg, #ebc47193, #dda2019d);
+    background: linear-gradient(180deg, #ebc47141, #dda2013f);
     cursor: pointer;
-    animation: buttonPlay 2s linear infinite;
 }
-.play__button:hover {
-    animation: tglink 1s ease-in-out;
-    padding-left: 10px;
+.play__button:hover{
+    padding-left: 25px;
+}
+.info {
+    height: 720px;
+}
+footer {
+    height: 50px;
+    background-color: var(--text-color);
+}
+.footer__content{
+    color: rgba(255, 255, 255, .7);
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__content .menu__item a{
+    color: rgba(255, 255, 255, .7);
+    font-size: 16px;
 }
 
-
-@keyframes tglink {
+@keyframes botAnim{
     0% {
-        transform: rotate(0);
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .15);
     }
-    20%, 60% {
-        transform: rotate(-1deg);
-    }
-    40%, 80%{
-        transform: rotate(1deg);
-    }
-    100% {
-        transform: rotate(0);
-    }
-}
-@keyframes buttonPlay {
-    0%, 100%{
-        color: rgba(255, 255, 255, .7);
-    }
-    50% {
-        color: rgba(255, 255, 255, 1);
+    50%{
+        box-shadow: 0px 0px 15px 5px #71b8eb50;
     }
 }
