@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: Rubik, sans-serif;
     --text-color: #404040;
+    --text-color-white: rgba(255, 255, 255, .9);
     color: var(--text-color);
     user-select: none;
 }
@@ -91,7 +92,7 @@ header {
     width: inherit;
     padding: 10px 20px;
     background: rgba(255, 255, 255, .2);
-    color: rgba(255, 255, 255, .9);
+    color: var(--text-color-white);
     font-size: 28px;
 }
 .server__info .ip {
@@ -100,7 +101,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, .9);
+    color: var(--text-color-white);
     transition: .3s;
     cursor: pointer;
 }
@@ -110,37 +111,53 @@ header {
 .tgbot__info .info {
     padding: 10px 10px;
     font-size: 24px;
-    color: rgba(255, 255, 255, .9);
+    color: var(--text-color-white)
 }
-.tgbot__info p{
-    font-size: 24px;
-    color: rgba(255, 255, 255, .7);
-}
-.tgbot__link, .play__button{
+.tgbot__link, .online{
     width: 228px;
+}
+.tgbot__link a{
+    width: inherit;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tgbot__link{
     display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0px;
+}
+.tgbot__link .text {
+    color: var(--text-color-white); 
+    transition: .5s;
+}
+.tgbot__link .text:hover {
+    color:var(--text-color);
+}
+.tgbot__text{
+    color: var(--text-color-white);
+}
+.online {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0px;
+}
+.online__info{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    
 }
-.tgbot__link .bot__image{
-    width: inherit;
-    height: inherit;
-    background: url(/img/bot.png) no-repeat center center/60%;
-}
-.tgbot__link{
-    background: linear-gradient(180deg, #71b8eb38, #0181dd34);
-    animation: botAnim 2s ease-in-out infinite;
-}
-.play__button {
-    background: linear-gradient(180deg, #ebc47141, #dda2013f);
-    cursor: pointer;
-}
-.play__button:hover{
-    padding-left: 25px;
+.online__status, .online__number{
+    color: var(--text-color-white);
 }
 .info {
     height: 720px;
@@ -159,13 +176,4 @@ footer {
 .footer__content .menu__item a{
     color: rgba(255, 255, 255, .7);
     font-size: 16px;
-}
-
-@keyframes botAnim{
-    0% {
-        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .15);
-    }
-    50%{
-        box-shadow: 0px 0px 15px 5px #71b8eb50;
-    }
 }

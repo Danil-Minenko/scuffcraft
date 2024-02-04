@@ -1,14 +1,19 @@
-let backgrounds = `url(../img/background-`;
 let app = document.getElementsByClassName(`main`)[0];
-let arr = [`black`, 'red'];
-let i = 0;
-
-let start = setInterval(function(){
-    i++;
-    if (i == 4){
-        i = 1;
+let backgrounds = {
+    path:`url(../img/`,
+    style:') no-repeat center 60%/cover',
+    images:[
+        `background-1.png`,
+        `background-2.png`,
+        `background-3.png`
+    ],
+    currentImage:1
+}
+let backgroundChange = setInterval(function(){
+    if (backgrounds.currentImage == backgrounds.images.length){
+        backgrounds.currentImage = 0;
     }
-    console.log(i);
-    app.style.background = backgrounds + `${i}.png) no-repeat center 60%/cover`;
+    app.style.background = backgrounds.path + backgrounds.images[backgrounds.currentImage]+backgrounds.style;
     app.style.transition= `2s`;
-}, 10000)
+    backgrounds.currentImage++;
+}, 5000)
